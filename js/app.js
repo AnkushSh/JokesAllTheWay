@@ -40,8 +40,8 @@ function getIndexJoke()
             document.getElementById("indexJokePunch").textContent = xhr.response.punchline;
 
             document.getElementById("loader").classList.add("hidden");
-            document.getElementById("indexJokeSetup").classList.add("hidden");
-            document.getElementById("indexJokePunch").classList.add("hidden");
+            document.getElementById("indexJokeSetup").classList.remove("hidden");
+            document.getElementById("indexJokePunch").classList.remove("hidden");
         }
     }
 }
