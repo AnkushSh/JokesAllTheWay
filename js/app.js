@@ -11,6 +11,41 @@ try
 }
 catch(e){}
 
+try
+{
+    document.getElementById("indexJokeBtn").addEventListener("click", getIndexJoke);
+}
+catch(e){}
+
+function getIndexJoke()
+{
+    document.getElementById("loader").classList.remove("hidden");
+    document.getElementById("indexJokeSetup").classList.add("hidden");
+    document.getElementById("indexJokePunch").classList.add("hidden");
+
+    var xhr = new XMLHttpRequest();
+    
+    xhr.responseType = "json"; // xhr.response will be parsed into a JSON object
+    xhr.open('GET', "https://official-joke-api.appspot.com/random_joke", true);
+    xhr.send();
+ 
+    xhr.onreadystatechange = processRequest;
+ 
+    function processRequest(e) 
+    {
+       
+        if (xhr.readyState == 4 && xhr.status == 200) 
+        {
+            document.getElementById("indexJokeSetup").textContent = xhr.response.setup;
+            document.getElementById("indexJokePunch").textContent = xhr.response.punchline;
+
+            document.getElementById("loader").classList.add("hidden");
+            document.getElementById("indexJokeSetup").classList.add("hidden");
+            document.getElementById("indexJokePunch").classList.add("hidden");
+        }
+    }
+}
+
 function getDadJoke()
 {
     document.getElementById("loader").classList.remove("hidden");
