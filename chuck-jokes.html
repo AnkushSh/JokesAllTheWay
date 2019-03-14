@@ -10,7 +10,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
+<body onload="getChuckJoke()">
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">Jokes All The Way</a>
       <ul class="right hide-on-med-and-down">
@@ -26,12 +26,13 @@
     </div>
   </nav>
     
-  <div class="container">
+  <div class="container center">
     <div class="row">
         <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
+          <div class="card blue-grey darken-1" >
+            <div class="card-content white-text" style="height: 15em">
               <span class="card-title">Chuck Norris Joke</span>
+              <div class="lds-ellipsis hidden" id="loader"><div></div><div></div><div></div><div></div></div>
               <p id="chuckJoke"></p>
             </div>
             <div class="card-action">
@@ -46,7 +47,7 @@
   <footer class="page-footer blue">
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="blue-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        Copyright @ <a class="blue-text text-lighten-3" href="">Jokes all the way!</a>
       </div>
     </div>
   </footer>

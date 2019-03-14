@@ -13,6 +13,9 @@ catch(e){}
 
 function getDadJoke()
 {
+    document.getElementById("loader").classList.remove("hidden");
+    document.getElementById("dadJoke").classList.add("hidden");
+
     var xhr = new XMLHttpRequest();
     
     xhr.responseType = "json"; // xhr.response will be parsed into a JSON object
@@ -28,12 +31,17 @@ function getDadJoke()
         if (xhr.readyState == 4 && xhr.status == 200) 
         {
             document.getElementById("dadJoke").textContent = xhr.response.joke;
+            document.getElementById("loader").classList.add("hidden");
+            document.getElementById("dadJoke").classList.remove("hidden");
         }
     }
 }
 
 function getChuckJoke()
 {
+    document.getElementById("loader").classList.remove("hidden");
+    document.getElementById("chuckJoke").classList.add("hidden");
+
     var xhr = new XMLHttpRequest();
     
     xhr.responseType = "json"; // xhr.response will be parsed into a JSON object
@@ -48,8 +56,9 @@ function getChuckJoke()
        
         if (xhr.readyState == 4 && xhr.status == 200) 
         {
-            debugger;
             document.getElementById("chuckJoke").textContent = xhr.response.value;
+            document.getElementById("loader").classList.add("hidden");
+            document.getElementById("chuckJoke").classList.remove("hidden");
         }
     }
 }
